@@ -1,0 +1,170 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+}
+.container {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+form {
+  display: flex;
+}
+
+form > input {
+  flex: 1 1 10ch;
+  margin: 8px 20px;
+  width: 100%;
+}
+
+input {
+  border: 1px solid gray;
+  background: hsl(0, 0%, 93%);
+  border-radius: 4px;
+  padding: 16px 10px;
+}
+
+input[type='submit'] {
+  background: rgb(169, 169, 169);
+  color: white;
+  box-shadow: 0 10px 8px -8px hsl(0, 0%, 45%);
+}
+
+:root {
+  --select-border: #777;
+  --select-focus: blue;
+  --select-arrow: var(--select-border);
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 16px 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  z-index: 1;
+  outline: none;
+}
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  display: grid;
+  grid-template-areas: 'select';
+  align-items: center;
+  position: relative;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid var(--select-border);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 15px;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+.select select,
+.select::after {
+  grid-area: select;
+}
+.select:not(.select--multiple)::after {
+  content: '';
+  justify-self: end;
+  width: 10px;
+  height: 8px;
+  background-color: var(--select-arrow);
+  -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+select:focus + .focus {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border: 2px solid var(--select-focus);
+  border-radius: inherit;
+}
+.select-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.select,
+.select-label {
+  margin-bottom: 10px;
+}
+
+.responsive-table li,
+.table-body-wrapper li {
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin-left: -20px;
+  margin-right: 20px;
+}
+.responsive-table .table-header {
+  background-color: #838383;
+  padding: 15px 15px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: white;
+}
+.table-body-wrapper .table-row {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  height: 50px;
+  background-color: #c2c2c2;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+  color: rgb(79, 79, 79);
+}
+.responsive-table .col-1 {
+  flex-basis: 25%;
+}
+.table-body-wrapper .col-1 {
+  flex-basis: 25%;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+.responsive-table .col-2 {
+  flex-basis: 25%;
+}
+.table-body-wrapper .col-2 {
+  flex-basis: 25%;
+  margin-top: 10px;
+}
+.responsive-table .col-3 {
+  flex-basis: 25%;
+}
+.table-body-wrapper .col-3 {
+  flex-basis: 25%;
+  margin-top: 10px;
+}
+.responsive-table .col-4 {
+  flex-basis: 25%;
+}
+.table-body-wrapper .col-4 {
+  flex-basis: 25%;
+  margin-top: 10px;
+  margin-right: 15px;
+}

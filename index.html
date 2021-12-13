@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_2</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="table-head-wrapper">
+        <ul class="responsive-table">
+          <li class="table-header">
+            <div class="col col-1">Tytuł książki</div>
+            <div class="col col-2">Autor książki</div>
+            <div class="col col-3">Priorytet</div>
+            <div class="col col-4">Kategoria</div>
+          </li>
+        </ul>
+      </div>
+      <div class="table-body-wrapper"></div>
+      <form class="form">
+        <input type="text" minlength="1" name="title" placeholder="Tytuł książki" required />
+        <input type="text" minlength="3" name="author" placeholder="Autor książki" />
+        <input
+          type="number"
+          min="1"
+          max="5"
+          step="1"
+          name="priority"
+          placeholder="Priorytet przeczytania"
+        />
+        <div class="select-container">
+          <label class="select-label" for="standard-select">Kategoria</label>
+          <div class="select">
+            <select id="standard-select" name="select">
+              <option value="dramat">Dramat</option>
+              <option value="fantastyka">Fantastyka</option>
+              <option value="kryminały">kryminały</option>
+            </select>
+            <span class="focus"></span>
+          </div>
+        </div>
+        <input type="submit" value="Add book" />
+      </form>
+    </div>
+  </body>
+</html>
